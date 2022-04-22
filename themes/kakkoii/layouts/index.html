@@ -30,14 +30,14 @@
               {{ .Date.Format "2006-01-02" }}
             </div>
             <div class="flex flex-wrap justify-start items-center p-2">
-              <h4 class="text-bold">Tags: </h4>
+              <h4 class="font-bold">Tags: </h4>
               {{ range $tag := .Params.Tags }}
                 <a class="p-2" href="{{ "/tags/" | relLangURL }}{{ $tag | urlize
                 }}">{{ $tag | upper }}</a>
               {{ end }}
             </div>
             <div class="flex flex-wrap justify-start items-center p-2">
-              <h4 class="text-bold">Related: </h4>
+              <h4 class="font-bold">Related: </h4>
               {{ $related := .Site.RegularPages.Related . | first 5 }}
                 {{ with $related }}
                   {{ range . }}

@@ -2,7 +2,7 @@
 title: "オッカムの剃刀"
 kana: "オッカム ノ カミソリ"
 date: 2022-04-22
-tags: ["数学", "成語", "ブルー"] 
+tags: ["数学", "成語", "ブルー", "O", "オ"] 
 rgb: [100, 100, 130] # use colorpicker by google
 ---
 

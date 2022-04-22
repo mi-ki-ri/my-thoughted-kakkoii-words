@@ -27,7 +27,7 @@
             <div class="flex justify-start items-center p-4">
               {{ .Date.Format "2006-01-02" }}
             </div>
-            <div class="flex justify-start items-center p-2">
+            <div class="flex flex-wrap justify-start items-center p-2">
               {{ range $tag := .Params.Tags }}
                 <a class="p-2" href="{{ "/tags/" | relLangURL }}{{ $tag | urlize
                 }}">{{ $tag | upper }}</a>

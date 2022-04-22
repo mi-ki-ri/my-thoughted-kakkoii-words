@@ -6,13 +6,13 @@
     <title>{{ .Site.Title }}</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
   </head>
-  <body class="bg-stone-700">
+  <body class="bg-stone-800">
     <header>
       <h1>
         <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
       </h1>
     </header>
-    <main class="container mx-auto">
+    <main class="container mx-auto bg-white">
       {{ block "main" . }}{{ end }}
     </main>
 

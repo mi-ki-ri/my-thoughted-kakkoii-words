@@ -7,16 +7,16 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
   </head>
   <body class="bg-stone-700">
-    <header class="bg-black h-72 mb-2 flex justify-center items-center">
+    <header class="bg-black h-72 mb-2 flex flex-col justify-center items-center">
       <h1>
-        <a class="text-white text-2xl" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+        <a class="text-white text-2xl p-5" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
       </h1>
       <section class="flex justify-around items-stretch">
         <div class="flex-1 p-1">
           <h2 class="text-white"> タグ </h2>
     
           {{- range $termName, $entries := .Site.Taxonomies.tags }}
-          <a class="text-white" href="{{ "/tags/" | relLangURL }}{{ $termName | urlize
+          <a class="text-white text-sm" href="{{ "/tags/" | relLangURL }}{{ $termName | urlize
                   }}">{{ $termName | upper }}</a> ({{ $entries.Count }})
               {{- end }}
         </div>

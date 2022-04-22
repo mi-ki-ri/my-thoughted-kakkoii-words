@@ -4,11 +4,11 @@
     {{ range (where .Site.RegularPages "Section" "posts") }}
       <li>
         <article>
-          <header>
+          <header class="flex justify-start item-baseline">
             <div style="color: rgb(
-                {{ range $rgbitem := .Params.rgb }}
-                  {{$rgbitem}},
-                {{ end }}
+                {{ index (.Params.rgb) 0 }},
+                {{ index (.Params.rgb) 1 }},
+                {{ index (.Params.rgb) 2 }}
               );">
               ■ 
             </div>

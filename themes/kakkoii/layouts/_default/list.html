@@ -1,7 +1,7 @@
 {{ define "main" }}
   <h2>記事一覧</h2>
   <ul class="flex flex-wrap justify-around items-center ">
-    {{ range (where .RegularPages "Section" "posts") }}
+    {{ range (where .RegularPages "Section" "posts").Reverse }}
       <li class="flex bg-gradient-to-br from-stone-50 to-stone-100 border border-stone-700 rounded p-3 m-5 shadow">
         <article class="flex flex-col justify-start items-stretch w-96">
           <header class="flex justify-start items-center mt-5 ">

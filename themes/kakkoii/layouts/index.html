@@ -4,15 +4,15 @@
     {{ range (where .Site.RegularPages "Section" "posts") }}
       <li>
         <article>
-          <header class="flex justify-start item-baseline">
-            <div style="color: rgb(
+          <header class="flex justify-start item-center">
+            <div class="p-1" style="color: rgb(
                 {{ index (.Params.rgb) 0 }},
                 {{ index (.Params.rgb) 1 }},
                 {{ index (.Params.rgb) 2 }}
               );">
               ■ 
             </div>
-            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            <h3 class="p-1"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
           </header>
           <main>
             {{ .Summary }}

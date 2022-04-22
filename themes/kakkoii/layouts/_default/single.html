@@ -1,9 +1,41 @@
 {{ define "main" }}
-  <article>
-    <header>
-      <h2>{{ .Title }}</h2>
-      <div>{{ .Date.Format "January 2, 2006" }}</div>
-    </header>
-    <div>{{ .Content }}</div>
-  </article>
+  <h2>記事一覧</h2>
+  <ul class="flex flex-wrap justify-around items-center ">
+      <li class="flex bg-gradient-to-br from-stone-50 to-stone-100 border border-stone-700 rounded p-3 shadow">
+        <article class="flex flex-col justify-start items-stretch">
+          <header class="flex justify-start items-center mt-5 ">
+            <div class="p-1 text-3xl" style="color: rgb(
+                {{ index (.Params.rgb) 0 }},
+                {{ index (.Params.rgb) 1 }},
+                {{ index (.Params.rgb) 2 }}
+              );">
+              ■ 
+            </div>
+            <h3 class="p-1">
+              <a class="p-5 text-3xl flex flex-col justify-center items-center" href="{{ .Permalink }}">
+                {{ .Title }}
+                <p class="text-xl">
+                  ( {{.Params.kana}} )
+                </p>
+              </a>
+            </h3>
+          </header>
+          <main class="p-1">
+            {{ .Content }}
+          </main>
+          <footer class="flex justify-start items-center p-2">
+            <div class="flex justify-start items-center p-4">
+              {{ .Date.Format "2006-01-02" }}
+            </div>
+            <div class="flex justify-start items-center p-2">
+              {{ range $tag := .Params.Tags }}
+                <a class="p-2" href="{{ "/tags/" | relLangURL }}{{ $tag | urlize
+                }}">{{ $tag | upper }}</a>
+              {{ end }}
+            </div>
+
+          </footer>
+        </article>
+      </li>
+  </ul>
 {{ end }}

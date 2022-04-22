@@ -1,8 +1,31 @@
 {{ define "main" }}
+  <h2>記事一覧</h2>
   <ul>
     {{ range (where .Site.RegularPages "Section" "posts") }}
       <li>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <article>
+          <header>
+            <div style="color: rgb({{.Params.rgb[0]}}, {{.Params.rgb[1]}}, {{.Params.rgb[2]}} );">
+              ■ 
+            </div>
+            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+          </header>
+          <main>
+            {{ .Summary }}
+          </main>
+          <footer>
+            <div>
+              {{ .Date.Format "2006-01-02" }}
+            </div>
+            <div>
+              {{ range $tag := .Params.Tags }}
+                <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize
+                }}">{{ $tag | upper }}</a>
+              {{ end }}
+            </div>
+
+          </footer>
+        </article>
       </li>
     {{ end }}
   </ul>

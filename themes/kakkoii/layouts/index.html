@@ -4,7 +4,7 @@
     {{ range (where .Site.RegularPages "Section" "posts") }}
       <li>
         <article>
-          <header class="flex justify-start item-center bg-gradient-tl from-stone-50 to-stone-200">
+          <header class="flex justify-start item-center bg-gradient-tl from-stone-50 to-stone-200 border-stone-50 rounded ">
             <div class="p-1" style="color: rgb(
                 {{ index (.Params.rgb) 0 }},
                 {{ index (.Params.rgb) 1 }},

@@ -5,7 +5,7 @@
       <li class="flex bg-gradient-to-br from-stone-50 to-stone-100 border border-stone-700 rounded p-3 shadow">
         <article class="flex flex-col justify-start items-stretch w-72">
           <header class="flex justify-start items-center mt-9 ">
-            <div class="p-1 text-2xl" style="color: rgb(
+            <div class="p-1 text-3xl" style="color: rgb(
                 {{ index (.Params.rgb) 0 }},
                 {{ index (.Params.rgb) 1 }},
                 {{ index (.Params.rgb) 2 }}
@@ -15,7 +15,9 @@
             <h3 class="p-1">
               <a class="p-5 text-3xl" href="{{ .Permalink }}">
                 {{ .Title }}
-                ( {{.Params.kana}} )
+                <span class="text-xl">
+                  ( {{.Params.kana}} )
+                </span>
               </a>
             </h3>
           </header>

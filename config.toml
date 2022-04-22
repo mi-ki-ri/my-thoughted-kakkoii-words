@@ -1,0 +1,7 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "カッコいい単語帳"
+theme = "kakkoii"
+
+[taxonomies]
+    tag = "tags"

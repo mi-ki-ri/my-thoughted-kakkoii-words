@@ -13,8 +13,31 @@
         <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
       </h1>
     </header>
-    <div>
+    <main>
       {{ block "main" . }}{{ end }}
-    </div>
+    </main>
+
+   
+    <footer class="bg-black text-white mt-1 p-1">
+      <div class="sm:container sm:mx-auto">
+        <section>
+          <address class="text-center">
+            mi.ki.ri.hassha.p@gmail.com
+          </address>
+        </section>
+        <section class="flex justify-around items-stretch">
+          <div class="flex-1 p-1">
+            <h2> タグ </h2>
+      
+            {{- range $termName, $entries := .Site.Taxonomies.tags }}
+            <a href="{{ "/tags/" | relLangURL }}{{ $termName | urlize
+                    }}">{{ $termName | upper }}</a> ({{ $entries.Count }})
+                {{- end }}
+          </div>
+        </section>
+      </div>
+
+      
+      </footer>
   </body>
 </html>

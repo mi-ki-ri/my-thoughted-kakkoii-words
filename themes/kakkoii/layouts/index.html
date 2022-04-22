@@ -5,7 +5,11 @@
       <li>
         <article>
           <header>
-            <div style="color: rgb({{.Params.rgb[0]}}, {{.Params.rgb[1]}}, {{.Params.rgb[2]}} );">
+            <div style="color: rgb(
+                {{ range $rgbitem := .Params.rgb }}
+                  {{$rgbitem}},
+                {{ end }}
+              );">
               ■ 
             </div>
             <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>

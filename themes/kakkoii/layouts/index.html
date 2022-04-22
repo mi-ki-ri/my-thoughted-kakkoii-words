@@ -1,9 +1,9 @@
 {{ define "main" }}
   <h2>記事一覧</h2>
-  <ul class="flex flex-wrap justify-around item-center "">
+  <ul class="flex flex-wrap justify-around items-center "">
     {{ range (where .Site.RegularPages "Section" "posts") }}
       <li class="flex bg-gradient-to-br from-stone-50 to-stone-100 border-stone-700 rounded">
-        <article class="flex flex-col justify-start item-stretch w-72">
+        <article class="flex flex-col justify-start items-stretch w-72">
           <header class="flex justify-start item-center ">
             <div class="p-1 text-2xl" style="color: rgb(
                 {{ index (.Params.rgb) 0 }},
@@ -21,11 +21,11 @@
           <main class="prose p-5">
             {{ .Content }}
           </main>
-          <footer class="flex justify-start item-center p-2">
-            <div class="flex justify-start item-center p-4">
+          <footer class="flex justify-start items-center p-2">
+            <div class="flex justify-start items-center p-4">
               {{ .Date.Format "2006-01-02" }}
             </div>
-            <div class="flex justify-start item-center p-2">
+            <div class="flex justify-start items-center p-2">
               {{ range $tag := .Params.Tags }}
                 <a class="p-2" href="{{ "/tags/" | relLangURL }}{{ $tag | urlize
                 }}">{{ $tag | upper }}</a>

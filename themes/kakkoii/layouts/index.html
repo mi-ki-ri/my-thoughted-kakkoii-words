@@ -2,9 +2,9 @@
   <h2>記事一覧</h2>
   <ul class="flex flex-wrap justify-around items-center ">
     {{ range (where .Site.RegularPages "Section" "posts") }}
-      <li class="flex bg-gradient-to-br from-stone-50 to-stone-100 border border-stone-700 rounded p-3">
+      <li class="flex bg-gradient-to-br from-stone-50 to-stone-100 border border-stone-700 rounded p-3 shadow">
         <article class="flex flex-col justify-start items-stretch w-72">
-          <header class="flex justify-start items-center ">
+          <header class="flex justify-start items-center mt-9 ">
             <div class="p-1 text-2xl" style="color: rgb(
                 {{ index (.Params.rgb) 0 }},
                 {{ index (.Params.rgb) 1 }},
@@ -19,8 +19,8 @@
               </a>
             </h3>
           </header>
-          <main class="prose p-5">
-            {{ .Content }}
+          <main class="p-5">
+            {{ .Summary }}
           </main>
           <footer class="flex justify-start items-center p-2">
             <div class="flex justify-start items-center p-4">

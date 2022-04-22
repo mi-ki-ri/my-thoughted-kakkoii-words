@@ -17,13 +17,13 @@
           <main>
             {{ .Summary }}
           </main>
-          <footer>
-            <div>
+          <footer class="flex justify-start item-center p-2">
+            <div class="flex justify-start item-center p-2">
               {{ .Date.Format "2006-01-02" }}
             </div>
-            <div>
+            <div class="flex justify-start item-center p-2">
               {{ range $tag := .Params.Tags }}
-                <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize
+                <a class="p-2" href="{{ "/tags/" | relLangURL }}{{ $tag | urlize
                 }}">{{ $tag | upper }}</a>
               {{ end }}
             </div>
